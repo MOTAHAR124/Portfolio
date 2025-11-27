@@ -31,6 +31,15 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${author.name}`,
     },
     description: portableTextToPlainText(author.description!),
+    icons: {
+      icon: author.avatar?.asset?.url 
+        ? [{ url: author.avatar.asset.url, type: "image/jpeg", sizes: "any" }]
+        : "/favicon.ico",
+      shortcut: author.avatar?.asset?.url || "/favicon.ico",
+      apple: author.avatar?.asset?.url
+        ? [{ url: author.avatar.asset.url, type: "image/jpeg" }]
+        : "/favicon.ico",
+    },
     openGraph: {
       title: author.name ?? "",
       description: portableTextToPlainText(author.description!),
@@ -38,6 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: author.name ?? "",
       locale: "en_US",
       type: "website",
+      images: author.avatar?.asset?.url ? [author.avatar.asset.url] : [],
     },
     robots: {
       index: true,
@@ -53,6 +63,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       title: author.name ?? "",
       card: "summary_large_image",
+      images: author.avatar?.asset?.url ? [author.avatar.asset.url] : [],
     },
     verification: {
       google: "",
@@ -77,7 +88,6 @@ export default async function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
             {children}
-            {/* @ts-expect-error Server Component */}
             <Navbar />
           </TooltipProvider>
         </ThemeProvider>
