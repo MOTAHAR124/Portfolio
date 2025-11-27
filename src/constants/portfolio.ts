@@ -79,7 +79,7 @@ export const AUTHOR: Author = {
   initials: "HA",
   avatar: {
     asset: {
-      url: "/projects/avatar.jpg",
+      url: "https://i.pinimg.com/736x/45/c9/30/45c930089bd6991ac39e475423a1bb61.jpg",
     },
   },
   description: [
