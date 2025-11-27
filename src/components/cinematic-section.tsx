@@ -5,7 +5,7 @@ import { useRef, useState, useEffect } from "react";
 import { Code2, Sparkles, Zap, Rocket, Terminal, Coffee } from "lucide-react";
 
 export function CinematicSection() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const mouseX = useMotionValue(0);
