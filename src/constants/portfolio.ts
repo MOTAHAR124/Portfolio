@@ -105,21 +105,35 @@ export const AUTHOR: Author = {
     },
   ],
   location: "India",
-  // All skills from portfolio-8: Frontend (5) + Backend (3) + Tools (4) = 12 skills
   skills: [
-    "Next.js 15",
-    "React",
+    "TypeScript",
+    "Next.js 16",
+    "React Js",
     "TailwindCSS",
     "JavaScript",
+    "HTML",
+    "CSS",
+    "Bootstrap",
+    "GSAP",
     "Framer Motion",
+    "Radix UI",
+    "Lucide React",
     "Node.js",
     "Nest.js",
+    "Next.js API Routes",
+    "Python",
+    "REST API",
+    "NextAuth (Google OAuth)",
+    "Clerk",
+    "LangChain",
+    "Google Gemini API",
     "MongoDB",
     "Express.js",
-    "VS Code",
-    "Postman",
-    "Photoshop",
     "Git",
+    "GitHub",
+    "NumPy",
+    "Responsive Design",
+    "Debugging",
   ],
   social: {
     github: "https://github.com/MOTAHAR124",
@@ -131,8 +145,8 @@ export const AUTHOR: Author = {
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     _id: "work-1",
-    company: "SelectSkillSet",
-    title: "Frontend Developer",
+    company: "Mistry Bhejo",
+    title: "Full Stack Developer",
     location: "Remote",
     startDate: "2024",
     endDate: "Present",
@@ -142,16 +156,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         children: [
           {
             _type: "span",
-            text: "Developing modern, responsive frontend applications with focus on user experience and performance. Working with cutting-edge technologies to build scalable web solutions.",
-          },
-        ],
-      },
-      {
-        _type: "block",
-        children: [
-          {
-            _type: "span",
-            text: "Key responsibilities include building responsive and interactive user interfaces using React and Next.js, implementing modern UI/UX designs with TailwindCSS and Framer Motion, optimizing application performance and ensuring cross-browser compatibility, and collaborating with design and backend teams to deliver high-quality features.",
+            text: "Worked across marketing, web development, and site inspection functions by executing digital marketing initiatives to generate leads and improve brand visibility, maintaining and enhancing the company website with responsive UI, basic SEO, and cross-browser compatibility, and conducting on-site inspections to ensure quality standards, proper execution, and customer satisfaction through effective coordination between clients and service professionals.",
           },
         ],
       },
@@ -188,7 +193,21 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
 ];
 
 export const EDUCATION: Education[] = [
-  // Add your education details here if needed
+  {
+    _id: "education-1",
+    school: "St. Joseph's & Mary's School",
+    degree: "Higher Secondary (12th Standard) | 72%",
+    startDate: "2018",
+    endDate: "2018",
+  },
+  {
+    _id: "education-2",
+    school: "A.J.C. Bose College, University of Calcutta",
+    degree:
+      "Bachelor of Science (Physics) (Coursework completed; degree not finished)",
+    startDate: "2020",
+    endDate: "2023",
+  },
 ];
 
 // Only 4 projects with images from portfolio-8

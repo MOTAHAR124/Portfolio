@@ -31,7 +31,7 @@ export default async function Page() {
   if (!author) return null;
 
   return (
-    <main className="flex flex-col min-h-[100dvh] space-y-10">
+    <main className="flex flex-col min-h-dvh space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -40,10 +40,10 @@ export default async function Page() {
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                 yOffset={8}
-                text={`Hi, I'm ${author.name?.split(" ")[0] ?? ""}`}
+                text={`Hi, I'm ${author.name ?? ""}`}
               />
               <BlurFadeText
-                className="max-w-[600px] md:text-xl"
+                className="max-w-150 md:text-xl"
                 delay={BLUR_FADE_DELAY}
                 text={portableTextToPlainText(author.description!)}
               />
@@ -146,7 +146,7 @@ export default async function Page() {
               </div>
             </div>
           </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-200 mx-auto">
             {projects.map((project, id) => {
               const demoLink =
                 project.links?.find((item) => item.type === "demo")?.url ?? "";
@@ -176,16 +176,19 @@ export default async function Page() {
         <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
             <div className="space-y-3">
-              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+              <Link
+                href="/contact"
+                className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm"
+              >
                 Contact
-              </div>
+              </Link>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                 Get in Touch
               </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="mx-auto max-w-150 text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat? Feel free to{" "}
                 <Link
-                  href={`mailto:${author.social?.email ?? ""}`}
+                  href="/contact"
                   className="text-blue-500 hover:underline"
                 >
                   send me an email

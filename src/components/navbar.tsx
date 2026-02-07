@@ -29,7 +29,7 @@ export default async function Navbar() {
         {[
           { href: "/", icon: HomeIcon, label: "Home" },
           {
-            href: `mailto:${author?.social?.email || ""}`,
+            href: "/contact",
             icon: MailIcon,
             label: "Contact",
           },
