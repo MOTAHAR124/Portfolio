@@ -147,23 +147,28 @@ export default async function Page() {
             </div>
           </BlurFade>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-            {projects.map((project, id) => (
-              <BlurFade
-                key={project._id}
-                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-              >
-                <ProjectCard
+            {projects.map((project, id) => {
+              const demoLink =
+                project.links?.find((item) => item.type === "demo")?.url ?? "";
+
+              return (
+                <BlurFade
                   key={project._id}
-                  title={project.title ?? ""}
-                  description={project.description ?? []}
-                  tags={project.technologies ?? []}
-                  image={project.image?.asset?.url ?? ""}
-                  video={project.video ?? ""}
-                  links={project.links ?? []}
-                  href={project.links?.[0]?.url ?? ""}
-                />
-              </BlurFade>
-            ))}
+                  delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                >
+                  <ProjectCard
+                    key={project._id}
+                    title={project.title ?? ""}
+                    description={project.description ?? []}
+                    tags={project.technologies ?? []}
+                    image={project.image?.asset?.url ?? ""}
+                    video={project.video ?? ""}
+                    links={project.links ?? []}
+                    href={demoLink}
+                  />
+                </BlurFade>
+              );
+            })}
           </div>
         </div>
       </section>

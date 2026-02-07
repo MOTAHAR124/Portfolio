@@ -20,8 +20,8 @@ A sleek, animated portfolio website built with Next.js 15 and Tailwind CSS. Feat
 
 1. Clone the repository or use this as a template for your portfolio
 
-2. Install pnpm if you haven't already:
-   `npm install -g pnpm`
+2. Install pnpm if you haven't already (recommended via Corepack):
+   `corepack enable`
 
 3. Install dependencies:
    `pnpm install`

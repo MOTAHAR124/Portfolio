@@ -75,26 +75,32 @@ export default async function Navbar() {
             icon: YoutubeIcon,
             url: author?.social?.youtube || "#",
           },
-        ].map((social) => (
-          <DockIcon key={social.name}>
-            <Tooltip>
-              <TooltipTrigger asChild>
-                <Link
-                  href={social.url}
-                  className={cn(
-                    buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12"
-                  )}
-                >
-                  <social.icon className="size-4" />
-                </Link>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{social.name}</p>
-              </TooltipContent>
-            </Tooltip>
-          </DockIcon>
-        ))}
+        ].map((social) => {
+          const isExternal = /^https?:\/\//.test(social.url);
+
+          return (
+            <DockIcon key={social.name}>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    href={social.url}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                    className={cn(
+                      buttonVariants({ variant: "ghost", size: "icon" }),
+                      "size-12"
+                    )}
+                  >
+                    <social.icon className="size-4" />
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>{social.name}</p>
+                </TooltipContent>
+              </Tooltip>
+            </DockIcon>
+          );
+        })}
         <Separator orientation="vertical" className="h-full py-2" />
         <DockIcon>
           <Tooltip>

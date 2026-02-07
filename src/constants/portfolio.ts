@@ -75,11 +75,11 @@ export interface Project {
 // Portfolio data
 export const AUTHOR: Author = {
   _id: "author-1",
-  name: "Huzaif Ahmed",
+  name: "Md Motahar",
   initials: "HA",
   avatar: {
     asset: {
-      url: "https://i.pinimg.com/736x/45/c9/30/45c930089bd6991ac39e475423a1bb61.jpg",
+      url: "/projects/profile.jpg",
     },
   },
   description: [
@@ -99,7 +99,7 @@ export const AUTHOR: Author = {
       children: [
         {
           _type: "span",
-          text: "I'm a full-stack developer with expertise in React, Next.js, Node.js, and MongoDB. I love creating modern, responsive web applications with a focus on user experience and performance. Currently working as a Frontend Developer at SelectSkillSet, I bring experience from my previous role as a Full Stack Developer at Tekisky.",
+          text: "I'm a full-stack developer with expertise in React, Next.js, Node.js, Nest.js and MongoDB. I love creating modern, responsive web applications with a focus on user experience and performance. Currently working as a Frontend Developer at SelectSkillSet, I bring experience from my previous role as a Full Stack Developer at Mistry Bhejo.",
         },
       ],
     },
@@ -113,6 +113,7 @@ export const AUTHOR: Author = {
     "JavaScript",
     "Framer Motion",
     "Node.js",
+    "Nest.js",
     "MongoDB",
     "Express.js",
     "VS Code",
@@ -121,8 +122,9 @@ export const AUTHOR: Author = {
     "Git",
   ],
   social: {
-    github: "https://github.com/huzaifahmedz",
-    email: "dev.huzaif@gmail.com",
+    github: "https://github.com/MOTAHAR124",
+    email: "mdmotahar822@gmail.com",
+    linkedin :"https://www.linkedin.com/in/md-motahar",
   },
 };
 
@@ -193,19 +195,19 @@ export const EDUCATION: Education[] = [
 export const PROJECTS: Project[] = [
   {
     _id: "project-1",
-    title: "AI-Powered Code Review Assistant",
+    title: "AI-Powered Travel Planner",
     description: [
       {
         _type: "block",
         children: [
           {
             _type: "span",
-            text: "An intelligent code review platform that uses machine learning to analyze pull requests, detect bugs, suggest optimizations, and enforce coding standards. Features real-time collaboration, automated testing integration, and comprehensive security scanning.",
+            text: "AI Trip Planner creates personalized, end-to-end itineraries in seconds. By matching your preferences with your destination, it delivers optimized daily schedules for a seamless and hassle-free planning experience.",
           },
         ],
       },
     ],
-    technologies: ["Python", "TensorFlow", "React", "FastAPI", "PostgreSQL", "Docker"],
+    technologies: ["Nest.js", "Responsive", "Tailwind CSS","TypeScript", "Node.js", "Gemini API", "Nest Auth", "LangChain"],
     image: {
       asset: {
         url: "/projects/project-1.webp",
@@ -214,31 +216,31 @@ export const PROJECTS: Project[] = [
     links: [
       {
         title: "Source Code",
-        url: "#",
+        url: "https://github.com/MOTAHAR124/AI-Trip-Planner",
         type: "code",
       },
       {
         title: "Live Demo",
-        url: "#",
+        url: "https://ai-trip-planner-pi-taupe.vercel.app",
         type: "demo",
       },
     ],
   },
   {
     _id: "project-2",
-    title: "Real-time Collaborative Whiteboard",
+    title: "Mistry Bhejo",
     description: [
       {
         _type: "block",
         children: [
           {
             _type: "span",
-            text: "A next-generation collaborative whiteboard platform with infinite canvas, real-time synchronization, and advanced drawing tools. Supports video conferencing, screen sharing, and export to multiple formats. Built for remote teams and educators.",
+            text: "Mistry Bhejo is a Kolkata-based marketplace connecting users with verified home improvement professionals and material suppliers for seamless residential and commercial projects.",
           },
         ],
       },
     ],
-    technologies: ["TypeScript", "WebRTC", "Socket.io", "Canvas API", "Node.js", "Redis"],
+    technologies: ["React.js", "TypeScript", "Tailwind CSS", "Express.js", "REST API", "mySQL"],
     image: {
       asset: {
         url: "/projects/project-2.webp",
@@ -252,26 +254,26 @@ export const PROJECTS: Project[] = [
       },
       {
         title: "Live Demo",
-        url: "#",
+        url: "https://mistrybhejo.com",
         type: "demo",
       },
     ],
   },
   {
     _id: "project-3",
-    title: "Blockchain Voting System",
+    title: "Gemini Clone",
     description: [
       {
         _type: "block",
         children: [
           {
             _type: "span",
-            text: "A secure, transparent, and decentralized voting platform built on Ethereum. Features smart contract-based voting, anonymous ballots, real-time result tracking, and immutable audit trails. Ensures election integrity through cryptographic verification.",
+            text: "Gemini-Clone is a functional web application designed to replicate the core experience of Google’s Gemini AI. Built with Next.js 16, it integrates the Google Gemini API to provide real-time, conversational AI responses.",
           },
         ],
       },
     ],
-    technologies: ["Solidity", "Web3.js", "React", "Ethereum", "IPFS", "MetaMask"],
+    technologies: ["Next js", "Tailwind CSS", "Responsive", "Clerk Auth", "Gemini API", "Nest Js"],
     image: {
       asset: {
         url: "/projects/project-3.webp",
@@ -280,19 +282,19 @@ export const PROJECTS: Project[] = [
     links: [
       {
         title: "Source Code",
-        url: "#",
+        url: "https://github.com/MOTAHAR124/Gemini-Clone2",
         type: "code",
       },
       {
         title: "Live Demo",
-        url: "#",
+        url: "https://gemini-clone2-three.vercel.app",
         type: "demo",
       },
     ],
   },
   {
     _id: "project-4",
-    title: "Cloud Infrastructure Dashboard",
+    title: "OCHI Animated Website",
     description: [
       {
         _type: "block",
@@ -304,7 +306,7 @@ export const PROJECTS: Project[] = [
         ],
       },
     ],
-    technologies: ["Go", "Kubernetes", "Grafana", "Prometheus", "Terraform", "React"],
+    technologies: ["React js", "Tailwind CSS", "Locomotive Scroll", "Framer Motion",],
     image: {
       asset: {
         url: "/projects/project-4.webp",
@@ -313,12 +315,12 @@ export const PROJECTS: Project[] = [
     links: [
       {
         title: "Source Code",
-        url: "#",
+        url: "https://github.com/MOTAHAR124/OCHI.git",
         type: "code",
       },
       {
         title: "Live Demo",
-        url: "#",
+        url: "https://ochi-phi-flax.vercel.app",
         type: "demo",
       },
     ],

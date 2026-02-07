@@ -41,6 +41,8 @@ export function ProjectCard({
   links,
   className,
 }: Props) {
+  const imageHref = href && href !== "#" ? href : "#";
+
   return (
     <Card
       className={
@@ -48,7 +50,9 @@ export function ProjectCard({
       }
     >
       <Link
-        href={href || "#"}
+        href={imageHref}
+        target={imageHref === "#" ? undefined : "_blank"}
+        rel={imageHref === "#" ? undefined : "noopener noreferrer"}
         className={cn("block cursor-pointer", className)}
       >
         <Image
