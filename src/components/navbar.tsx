@@ -12,10 +12,10 @@ import { getAuthorData } from "@/lib/data";
 import {
   GithubIcon,
   HomeIcon,
+  InstagramIcon,
   LinkedinIcon,
   MailIcon,
   TwitterIcon,
-  YoutubeIcon,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -71,9 +71,9 @@ export default async function Navbar() {
             url: author?.social?.linkedin || "#",
           },
           {
-            name: "YouTube",
-            icon: YoutubeIcon,
-            url: author?.social?.youtube || "#",
+            name: "Instagram",
+            icon: InstagramIcon,
+            url: author?.social?.instagram || "#",
           },
         ].map((social) => {
           const isExternal = /^https?:\/\//.test(social.url);
@@ -103,14 +103,7 @@ export default async function Navbar() {
         })}
         <Separator orientation="vertical" className="h-full py-2" />
         <DockIcon>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <ModeToggle />
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Theme</p>
-            </TooltipContent>
-          </Tooltip>
+          <ModeToggle />
         </DockIcon>
       </Dock>
     </div>

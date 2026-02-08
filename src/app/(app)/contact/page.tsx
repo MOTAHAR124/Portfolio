@@ -36,9 +36,9 @@ export default async function ContactPage() {
       href: author.social?.twitter ?? "",
     },
     {
-      label: "YouTube",
-      value: author.social?.youtube ?? "",
-      href: author.social?.youtube ?? "",
+      label: "Instagram",
+      value: author.social?.instagram ?? "",
+      href: author.social?.instagram ?? "",
     },
   ].filter((item) => item.value);
 

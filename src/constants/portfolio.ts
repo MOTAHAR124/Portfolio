@@ -18,6 +18,7 @@ export interface Author {
     linkedin?: string;
     twitter?: string;
     youtube?: string;
+    instagram?: string;
     email?: string;
   };
 }
@@ -139,6 +140,7 @@ export const AUTHOR: Author = {
     github: "https://github.com/MOTAHAR124",
     email: "mdmotahar822@gmail.com",
     linkedin :"https://www.linkedin.com/in/md-motahar",
+    instagram: "https://www.instagram.com/syedmotahar/",
   },
 };
 
