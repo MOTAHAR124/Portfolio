@@ -327,7 +327,7 @@ export const PROJECTS: Project[] = [
         ],
       },
     ],
-    technologies: ["React js", "Tailwind CSS", "Locomotive Scroll", "Framer Motion",],
+    technologies: ["Next js", "Tailwind CSS", "Locomotive Scroll", "Framer Motion",],
     image: {
       asset: {
         url: "/projects/project-4.webp",
@@ -336,12 +336,12 @@ export const PROJECTS: Project[] = [
     links: [
       {
         title: "Source Code",
-        url: "https://github.com/MOTAHAR124/OCHI.git",
+        url: "https://github.com/MOTAHAR124/OCHI-new.git",
         type: "code",
       },
       {
         title: "Live Demo",
-        url: "https://ochi-phi-flax.vercel.app",
+        url: "https://ochi-new-two.vercel.app",
         type: "demo",
       },
     ],
