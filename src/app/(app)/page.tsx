@@ -47,6 +47,24 @@ export default async function Page() {
                 delay={BLUR_FADE_DELAY}
                 text={portableTextToPlainText(author.description!)}
               />
+              <BlurFade delay={BLUR_FADE_DELAY * 1.2}>
+                <div className="flex flex-wrap items-center gap-2 pt-2">
+                  <a
+                    href="/api/resume"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-lg bg-foreground px-3 py-1.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+                  >
+                    View Resume (PDF)
+                  </a>
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center rounded-lg bg-foreground px-3 py-1.5 text-sm font-medium text-background transition-opacity hover:opacity-90"
+                  >
+                    Contact Me
+                  </Link>
+                </div>
+              </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY} className="shrink-0 -mt-5">
               <Avatar className="size-28 border">

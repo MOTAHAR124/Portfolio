@@ -1,3 +1,3 @@
 git add .
-git commit -m "polished more"
+git commit -m "added View Resume (PDF)"
 git push
