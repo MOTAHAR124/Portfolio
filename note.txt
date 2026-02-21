@@ -1,3 +1,3 @@
 git add .
-git commit -m "added View Resume (PDF)"
+git commit -m "added cards group background"
 git push
