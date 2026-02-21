@@ -158,7 +158,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         children: [
           {
             _type: "span",
-            text: "Worked across marketing, web development, and site inspection functions by executing digital marketing initiatives to generate leads and improve brand visibility, maintaining and enhancing the company website with responsive UI, basic SEO, and cross-browser compatibility, and conducting on-site inspections to ensure quality standards, proper execution, and customer satisfaction through effective coordination between clients and service professionals.",
+            text: "Key contributions included:\n- Executed digital marketing initiatives that improved lead generation and strengthened brand visibility.\n- Maintained and enhanced the company website with responsive UI updates, basic SEO improvements, and cross-browser compatibility fixes.\n- Conducted on-site inspections to ensure service quality, proper execution, and adherence to operational standards.\n- Coordinated effectively between clients and service professionals to improve delivery outcomes and customer satisfaction.",
           },
         ],
       },
@@ -177,7 +177,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         children: [
           {
             _type: "span",
-            text: "Developed and maintained full-stack web applications by working across both frontend and backend systems. Collaborated with cross-functional teams to design and deliver scalable software solutions.",
+            text: "Developed and maintained scalable full-stack web applications across frontend and backend systems, collaborating with cross-functional teams to deliver reliable, high-performance solutions. Applied core skills in React, Next.js, TypeScript, Node.js, Express.js, MongoDB, and Tailwind CSS throughout the development lifecycle.",
           },
         ],
       },
@@ -186,7 +186,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         children: [
           {
             _type: "span",
-            text: "Key responsibilities included:\n• Building and maintaining full-stack applications using React, Node.js, and MongoDB\n• Designing and implementing RESTful APIs and integrating third-party services\n• Developing responsive, user-friendly interfaces and optimizing application performance\n• Contributing to database design, backend architecture, and system optimization",
+            text: "Key responsibilities included:\n- Built and maintained full-stack applications using React, Next.js, Node.js, Express.js, and MongoDB.\n- Designed and implemented RESTful APIs, integrated third-party services, and supported secure authentication flows.\n- Developed responsive, user-friendly interfaces with Tailwind CSS and optimized frontend performance for better user experience.\n- Contributed to database design, backend architecture, debugging, and overall system optimization using TypeScript and modern development practices.",
           },
         ],
       },
@@ -223,7 +223,7 @@ export const PROJECTS: Project[] = [
         children: [
           {
             _type: "span",
-            text: "AI Trip Planner creates personalized, end-to-end itineraries in seconds. By matching your preferences with your destination, it delivers optimized daily schedules for a seamless and hassle-free planning experience.",
+            text: "Built an AI-powered travel planning platform that generates personalized, end-to-end itineraries in seconds. The app matches user preferences with destination context to deliver optimized daily schedules for a faster, more seamless planning experience.",
           },
         ],
       },
@@ -256,7 +256,7 @@ export const PROJECTS: Project[] = [
         children: [
           {
             _type: "span",
-            text: "Mistry Bhejo is a Kolkata-based marketplace connecting users with verified home improvement professionals and material suppliers for seamless residential and commercial projects.",
+            text: "Developed a marketplace platform connecting users with verified home improvement professionals and material suppliers. Focused on creating a reliable, user-friendly experience for smoother residential and commercial project execution.",
           },
         ],
       },
@@ -289,7 +289,7 @@ export const PROJECTS: Project[] = [
         children: [
           {
             _type: "span",
-            text: "Gemini-Clone is a functional web application designed to replicate the core experience of Google’s Gemini AI. Built with Next.js 16, it integrates the Google Gemini API to provide real-time, conversational AI responses.",
+            text: "Built a Gemini-inspired AI web application that replicates core conversational workflows with real-time responses. Implemented with Next.js 16 and integrated the Google Gemini API to deliver fast, context-aware interactions.",
           },
         ],
       },
@@ -322,7 +322,7 @@ export const PROJECTS: Project[] = [
         children: [
           {
             _type: "span",
-            text: "Replicated the OCHI-inspired animated website using Next.js 16, and Tailwind CSS.\n• Built a multi-page experience with Home, About, Services, Work, Insights, and Contact routes using reusable section-based components.\n• Implemented smooth scrolling with Lenis and motion effects with Framer Motion and GSAP for a high-fidelity interactive feel.\n• Created an interactive eye animation that follows the cursor across multiple sections and call-to-action blocks.",
+            text: "Engineered an OCHI-inspired animated website using Next.js 16, React, and Tailwind CSS.\n- Built a multi-page experience (Home, About, Services, Work, Insights, Contact) with reusable section-based components.\n- Implemented smooth scrolling with Lenis and advanced motion interactions using Framer Motion and GSAP.\n- Developed an interactive cursor-follow eye animation across key sections and call-to-action components.\n- Refined typography, interaction states, and responsive behavior to closely match the intended visual language.",
           },
         ],
       },
@@ -347,3 +347,4 @@ export const PROJECTS: Project[] = [
     ],
   },
 ];
+
