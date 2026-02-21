@@ -202,28 +202,36 @@ export async function GET() {
 
   const drawParagraph = (
     text: string,
-    options?: { bold?: boolean; size?: number; color?: "text" | "muted"; gapAfter?: number }
+    options?: {
+      bold?: boolean;
+      size?: number;
+      color?: "text" | "muted";
+      gapAfter?: number;
+      indent?: number;
+    }
   ) => {
     const drawFont = options?.bold ? boldFont : font;
     const size = options?.size ?? sizes.body;
+    const indent = options?.indent ?? 0;
     const lines = wrapText(
       text,
-      contentWidth,
+      contentWidth - indent,
       (value) => drawFont.widthOfTextAtSize(value, size)
     );
-    drawLines(lines, options);
+    drawLines(lines, { ...options, indent });
     if (options?.gapAfter) y -= options.gapAfter;
   };
 
   const drawLink = (
     label: string,
     url: string,
-    options?: { size?: number; gapAfter?: number }
+    options?: { size?: number; gapAfter?: number; indent?: number }
   ) => {
     const size = options?.size ?? sizes.meta;
+    const indent = options?.indent ?? 0;
     const lines = wrapText(
       label,
-      contentWidth,
+      contentWidth - indent,
       (value) => font.widthOfTextAtSize(value, size)
     );
 
@@ -231,7 +239,7 @@ export async function GET() {
       ensureSpace();
       const lineY = y;
       const textWidth = font.widthOfTextAtSize(line, size);
-      const x = margin;
+      const x = margin + indent;
 
       page.drawText(line, {
         x,
@@ -357,26 +365,45 @@ export async function GET() {
 
   drawSection("PROJECTS");
   for (const project of PROJECTS) {
+    const projectIndent = 14 + font.widthOfTextAtSize("- ", sizes.body);
     drawParagraph(project.title, { bold: true });
-    drawParagraph(normalizeText(portableTextToPlainText(project.description ?? [])), {
-      gapAfter: 1,
-    });
+    const projectBlocks = (project.description ?? []).filter(
+      (block: any) => block?._type === "block"
+    );
+
+    for (const block of projectBlocks) {
+      const text = normalizeText(
+        (block?.children ?? []).map((child: any) => child?.text ?? "").join("")
+      );
+      if (!text) continue;
+
+      if (block?.listItem === "bullet") {
+        drawBulletItem(text, 1);
+      } else {
+        drawParagraph(text, { gapAfter: 1 });
+      }
+    }
 
     if (project.technologies?.length) {
       drawParagraph(`Tech Stack: ${project.technologies.join(", ")}`, {
         size: sizes.meta,
         color: "muted",
+        indent: projectIndent,
       });
     }
 
     const githubUrl = project.links?.find((item) => item.type === "code")?.url;
     const demoUrl = project.links?.find((item) => item.type === "demo")?.url;
     if (githubUrl && githubUrl !== "#") {
-      drawLink(`GitHub: ${githubUrl}`, githubUrl, { size: sizes.meta });
+      drawLink(`GitHub: ${githubUrl}`, githubUrl, {
+        size: sizes.meta,
+        indent: projectIndent,
+      });
     }
     if (demoUrl && demoUrl !== "#") {
       drawLink(`Live Demo: ${demoUrl}`, demoUrl, {
         size: sizes.meta,
+        indent: projectIndent,
       });
     }
     y -= 2;

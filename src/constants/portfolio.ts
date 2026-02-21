@@ -220,10 +220,23 @@ export const PROJECTS: Project[] = [
     description: [
       {
         _type: "block",
+        listItem: "bullet",
+        level: 1,
         children: [
           {
             _type: "span",
-            text: "Built an AI-powered travel planning platform that generates personalized, end-to-end itineraries in seconds. The app matches user preferences with destination context to deliver optimized daily schedules for a faster, more seamless planning experience.",
+            text: "Built an AI-powered travel planning platform that generates personalized, end-to-end itineraries in seconds.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        listItem: "bullet",
+        level: 1,
+        children: [
+          {
+            _type: "span",
+            text: "Matched user preferences with destination context to deliver optimized daily schedules for faster planning.",
           },
         ],
       },
@@ -253,10 +266,23 @@ export const PROJECTS: Project[] = [
     description: [
       {
         _type: "block",
+        listItem: "bullet",
+        level: 1,
         children: [
           {
             _type: "span",
-            text: "Developed a marketplace platform connecting users with verified home improvement professionals and material suppliers. Focused on creating a reliable, user-friendly experience for smoother residential and commercial project execution.",
+            text: "Developed a marketplace platform connecting users with verified home improvement professionals and material suppliers.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        listItem: "bullet",
+        level: 1,
+        children: [
+          {
+            _type: "span",
+            text: "Focused on a reliable, user-friendly experience for smoother residential and commercial project execution.",
           },
         ],
       },
@@ -286,10 +312,23 @@ export const PROJECTS: Project[] = [
     description: [
       {
         _type: "block",
+        listItem: "bullet",
+        level: 1,
         children: [
           {
             _type: "span",
-            text: "Built a Gemini-inspired AI web application that replicates core conversational workflows with real-time responses. Implemented with Next.js 16 and integrated the Google Gemini API to deliver fast, context-aware interactions.",
+            text: "Built a Gemini-inspired AI web app that replicates core conversational workflows with real-time responses.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        listItem: "bullet",
+        level: 1,
+        children: [
+          {
+            _type: "span",
+            text: "Implemented with Next.js 16 and integrated Google Gemini API for fast, context-aware interactions.",
           },
         ],
       },
@@ -319,10 +358,56 @@ export const PROJECTS: Project[] = [
     description: [
       {
         _type: "block",
+        listItem: "bullet",
+        level: 1,
         children: [
           {
             _type: "span",
-            text: "Engineered an OCHI-inspired animated website using Next.js 16, React, and Tailwind CSS.\n- Built a multi-page experience (Home, About, Services, Work, Insights, Contact) with reusable section-based components.\n- Implemented smooth scrolling with Lenis and advanced motion interactions using Framer Motion and GSAP.\n- Developed an interactive cursor-follow eye animation across key sections and call-to-action components.\n- Refined typography, interaction states, and responsive behavior to closely match the intended visual language.",
+            text: "Engineered an OCHI-inspired animated website using Next.js 16, React, and Tailwind CSS.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        listItem: "bullet",
+        level: 1,
+        children: [
+          {
+            _type: "span",
+            text: "Built a multi-page experience (Home, About, Services, Work, Insights, Contact) with reusable section-based components.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        listItem: "bullet",
+        level: 1,
+        children: [
+          {
+            _type: "span",
+            text: "Implemented smooth scrolling with Lenis and advanced interactions using Framer Motion and GSAP.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        listItem: "bullet",
+        level: 1,
+        children: [
+          {
+            _type: "span",
+            text: "Developed an interactive cursor-follow eye animation across key sections and CTAs.",
+          },
+        ],
+      },
+      {
+        _type: "block",
+        listItem: "bullet",
+        level: 1,
+        children: [
+          {
+            _type: "span",
+            text: "Refined typography, interaction states, and responsive behavior to match the intended visual language.",
           },
         ],
       },

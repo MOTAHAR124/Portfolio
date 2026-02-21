@@ -60,13 +60,13 @@ export function CinematicSection() {
         className="absolute inset-0 opacity-30 dark:opacity-20"
         style={{ x, y }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-foreground/5 via-transparent to-foreground/5" />
+        <div className="absolute inset-0 bg-linear-to-br from-foreground/5 via-transparent to-foreground/5" />
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-foreground/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-foreground/5 rounded-full blur-3xl" />
       </motion.div>
 
       {/* Animated grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:40px_40px] opacity-20" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-size-[40px_40px] opacity-20" />
 
       {/* Static icons */}
       {floatingIcons.map(({ Icon, delay, x: offsetX, y: offsetY }, index) => (
@@ -176,7 +176,7 @@ export function CinematicSection() {
               </div>
 
               {/* Glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground/5 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-linear-to-r from-transparent via-foreground/5 to-transparent pointer-events-none" />
             </div>
           </motion.div>
 
@@ -285,7 +285,7 @@ export function CinematicSection() {
         animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
         transition={{ delay: 1, duration: 0.8 }}
       >
-        <div className="h-full bg-gradient-to-r from-transparent via-foreground/20 to-transparent" />
+        <div className="h-full bg-linear-to-r from-transparent via-foreground/20 to-transparent" />
       </motion.div>
     </section>
   );

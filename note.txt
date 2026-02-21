@@ -1,3 +1,3 @@
 git add .
-git commit -m "added cards group background"
+git commit -m "edit card background width and project section styling"
 git push

@@ -164,7 +164,7 @@ export default async function Page() {
               </div>
             </div>
           </BlurFade>
-          <div className="mx-3 mt-8 rounded-2xl border border-border/70 bg-muted/30 p-3 sm:mx-auto sm:mt-10 sm:max-w-[52rem] sm:p-4">
+          <div className="relative left-1/2 mt-8 w-[calc(100vw-1.5rem)] max-w-3xl -translate-x-1/2 rounded-2xl border border-border/70 bg-muted/30 p-3 sm:mt-10 sm:w-[calc(100vw-3rem)] sm:p-4">
             <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {projects.map((project, id) => {
                 const demoLink =
