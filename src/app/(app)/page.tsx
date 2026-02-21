@@ -34,7 +34,7 @@ export default async function Page() {
     <main className="flex flex-col min-h-dvh space-y-10">
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
+          <div className="flex items-start justify-between gap-2">
             <div className="flex-col flex flex-1 space-y-1.5">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
@@ -48,12 +48,12 @@ export default async function Page() {
                 text={portableTextToPlainText(author.description!)}
               />
             </div>
-            <BlurFade delay={BLUR_FADE_DELAY}>
+            <BlurFade delay={BLUR_FADE_DELAY} className="shrink-0 -mt-5">
               <Avatar className="size-28 border">
                 <AvatarImage
                   alt={author.name ?? ""}
                   src={author.avatar?.asset?.url ?? ""}
-                  className="object-cover"
+                  className="object-cover scale-160"
                 />
                 <AvatarFallback>{author.initials}</AvatarFallback>
               </Avatar>

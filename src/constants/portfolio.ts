@@ -166,7 +166,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     _id: "work-2",
-    company: "Tekisky",
+    company: "Freelance",
     title: "Full Stack Developer",
     location: "Remote",
     startDate: "2023",
@@ -177,7 +177,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         children: [
           {
             _type: "span",
-            text: "Developed and maintained full-stack web applications, working on both frontend and backend systems. Collaborated with cross-functional teams to deliver robust software solutions.",
+            text: "Developed and maintained full-stack web applications by working across both frontend and backend systems. Collaborated with cross-functional teams to design and deliver scalable software solutions.",
           },
         ],
       },
@@ -186,7 +186,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
         children: [
           {
             _type: "span",
-            text: "Key responsibilities included developing and maintaining full-stack web applications using React, Node.js, and MongoDB, implementing RESTful APIs and integrating third-party services, building responsive user interfaces and optimizing application performance, and working on database design and backend architecture.",
+            text: "Key responsibilities included:\n• Building and maintaining full-stack applications using React, Node.js, and MongoDB\n• Designing and implementing RESTful APIs and integrating third-party services\n• Developing responsive, user-friendly interfaces and optimizing application performance\n• Contributing to database design, backend architecture, and system optimization",
           },
         ],
       },
@@ -198,7 +198,7 @@ export const EDUCATION: Education[] = [
   {
     _id: "education-1",
     school: "St. Joseph's & Mary's School",
-    degree: "Higher Secondary (12th Standard) | 72%",
+    degree: "Higher Secondary (12th Standard) ",
     startDate: "2018",
     endDate: "2018",
   },
@@ -322,12 +322,12 @@ export const PROJECTS: Project[] = [
         children: [
           {
             _type: "span",
-            text: "A comprehensive cloud management platform for monitoring, managing, and optimizing multi-cloud infrastructure. Features real-time metrics, cost analysis, automated scaling, and security compliance monitoring across AWS, Azure, and GCP.",
+            text: "Replicated the OCHI-inspired animated website using Next.js 16, and Tailwind CSS.\n• Built a multi-page experience with Home, About, Services, Work, Insights, and Contact routes using reusable section-based components.\n• Implemented smooth scrolling with Lenis and motion effects with Framer Motion and GSAP for a high-fidelity interactive feel.\n• Created an interactive eye animation that follows the cursor across multiple sections and call-to-action blocks.",
           },
         ],
       },
     ],
-    technologies: ["Next js", "Tailwind CSS", "Locomotive Scroll", "Framer Motion",],
+    technologies: ["Next js", "Tailwind CSS", "GSAP","LENIS", "Locomotive Scroll", "Framer Motion",],
     image: {
       asset: {
         url: "/projects/project-4.webp",
@@ -341,7 +341,7 @@ export const PROJECTS: Project[] = [
       },
       {
         title: "Live Demo",
-        url: "https://ochi-new-two.vercel.app",
+        url: "https://ochi-new-sepia.vercel.app",
         type: "demo",
       },
     ],

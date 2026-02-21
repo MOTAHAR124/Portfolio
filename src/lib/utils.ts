@@ -30,6 +30,6 @@ export function portableTextToPlainText(blocks: any[] = []): string {
           ? block.children?.map((child: any) => child.text).join("")
           : ""
       )
-      .join(" ") ?? ""
+      .join("\n\n") ?? ""
   );
 }
