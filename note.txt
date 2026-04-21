@@ -1,3 +1,3 @@
 git add .
-git commit -m "curson pointer above dark/light mode in navbar"
+git commit -m "edited skills and its styling"
 git push

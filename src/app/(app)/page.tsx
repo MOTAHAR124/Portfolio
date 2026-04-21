@@ -110,7 +110,7 @@ export default async function Page() {
           ))}
         </div>
       </section>
-      <section id="education">
+      {/* <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <h2 className="text-xl font-bold">Education</h2>
@@ -129,16 +129,36 @@ export default async function Page() {
             </BlurFade>
           ))}
         </div>
-      </section>
+      </section> */}
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
+          <div className="flex flex-col gap-1">
             {author.skills?.map((skill, id) => (
               <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+                <Badge
+                  key={skill}
+                  className="h-auto w-full py-2 text-left font-normal"
+                >
+                  <div className="space-y-1">
+                    {skill.split("\n").map((line, lineIndex) => {
+                      const [label, ...rest] = line.split(":");
+
+                      if (rest.length === 0) {
+                        return <p key={`${skill}-${lineIndex}`}>{line}</p>;
+                      }
+
+                      return (
+                        <p key={`${skill}-${lineIndex}`}>
+                          <span className="font-semibold">{label}:</span>{" "}
+                          {rest.join(":").trim()}
+                        </p>
+                      );
+                    })}
+                  </div>
+                </Badge>
               </BlurFade>
             ))}
           </div>

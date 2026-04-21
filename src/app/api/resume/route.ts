@@ -56,55 +56,45 @@ function wrapText(
   return lines;
 }
 
-function groupSkills(skills: string[] = []) {
-  const groups: Record<string, string[]> = {
-    Frontend: [],
-    Backend: [],
-    Database: [],
-    Tools: [],
-    Other: [],
-  };
+type ParsedSkillLine = {
+  label: string;
+  value: string;
+};
 
-  for (const skill of skills) {
-    const s = skill.toLowerCase();
-    if (
-      s.includes("react") ||
-      s.includes("next") ||
-      s.includes("tailwind") ||
-      s.includes("html") ||
-      s.includes("css") ||
-      s.includes("bootstrap") ||
-      s.includes("radix") ||
-      s.includes("lucide")
-    ) {
-      groups.Frontend.push(skill);
-    } else if (
-      s.includes("node") ||
-      s.includes("nest") ||
-      s.includes("api") ||
-      s.includes("auth") ||
-      s.includes("express") ||
-      s.includes("langchain") ||
-      s.includes("gemini")
-    ) {
-      groups.Backend.push(skill);
-    } else if (s.includes("mongo") || s.includes("mysql")) {
-      groups.Database.push(skill);
-    } else if (
-      s.includes("git") ||
-      s.includes("debug") ||
-      s.includes("python") ||
-      s.includes("numpy") ||
-      s.includes("javascript") ||
-      s.includes("typescript")
-    ) {
-      groups.Tools.push(skill);
-    } else {
-      groups.Other.push(skill);
-    }
-  }
+type ParsedSkillBlock = {
+  title: string;
+  details: ParsedSkillLine[];
+};
 
-  return Object.entries(groups).filter(([, list]) => list.length > 0);
+function parseSkills(skills: string[] = []): ParsedSkillBlock[] {
+  return skills
+    .map((entry) => {
+      const lines = entry
+        .split("\n")
+        .map((line) => normalizeText(line))
+        .filter(Boolean);
+
+      const parsed = lines
+        .map((line) => {
+          const colonIndex = line.indexOf(":");
+          if (colonIndex === -1) return null;
+
+          return {
+            label: normalizeText(line.slice(0, colonIndex)),
+            value: normalizeText(line.slice(colonIndex + 1)),
+          };
+        })
+        .filter((line): line is ParsedSkillLine => Boolean(line && line.label && line.value));
+
+      if (!parsed.length) return null;
+
+      const [first, ...rest] = parsed;
+      return {
+        title: first.label,
+        details: [{ label: "Core", value: first.value }, ...rest],
+      };
+    })
+    .filter((block): block is ParsedSkillBlock => Boolean(block));
 }
 
 export async function GET() {
@@ -333,8 +323,18 @@ export async function GET() {
   drawDivider();
 
   drawSection("SKILLS");
-  for (const [group, list] of groupSkills(AUTHOR.skills ?? [])) {
-    drawParagraph(`${group}: ${list.join(", ")}`, { gapAfter: 1 });
+  const skillBlocks = parseSkills(AUTHOR.skills ?? []);
+  for (const block of skillBlocks) {
+    drawParagraph(block.title.toUpperCase(), { bold: true, gapAfter: 0 });
+    for (const detail of block.details) {
+      drawParagraph(`${detail.label}: ${detail.value}`, {
+        size: sizes.meta,
+        color: "text",
+        indent: 14,
+        gapAfter: 0,
+      });
+    }
+    y -= 2;
   }
   y -= 3;
   drawDivider();
@@ -410,15 +410,17 @@ export async function GET() {
   }
   drawDivider();
 
-  drawSection("EDUCATION");
-  for (const edu of EDUCATION) {
-    drawParagraph(`${edu.degree}`, { bold: true });
-    drawParagraph(`${edu.school}`, { gapAfter: 0 });
-    drawParagraph(`${edu.startDate} - ${edu.endDate}`, {
-      size: sizes.meta,
-      color: "muted",
-      gapAfter: 2,
-    });
+  if (EDUCATION.length > 0) {
+    drawSection("EDUCATION");
+    for (const edu of EDUCATION) {
+      drawParagraph(`${edu.degree}`, { bold: true });
+      drawParagraph(`${edu.school}`, { gapAfter: 0 });
+      drawParagraph(`${edu.startDate} - ${edu.endDate}`, {
+        size: sizes.meta,
+        color: "muted",
+        gapAfter: 2,
+      });
+    }
   }
 
   const bytes = await pdfDoc.save();
