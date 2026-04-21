@@ -28,7 +28,7 @@ export function ModeToggle() {
           variant="ghost"
           type="button"
           size="icon"
-          className="px-2"
+          className="px-2 cursor-pointer"
           aria-label={currentModeLabel}
           onClick={() => setTheme(isDarkMode ? "light" : "dark")}
         >

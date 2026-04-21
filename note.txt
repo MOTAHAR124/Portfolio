@@ -1,3 +1,3 @@
 git add .
-git commit -m "edit gemini project and updated version and build ci/cd pipeline"
+git commit -m "curson pointer above dark/light mode in navbar"
 git push
