@@ -67,7 +67,12 @@ type ParsedSkillBlock = {
 };
 
 function parseSkills(skills: string[] = []): ParsedSkillBlock[] {
-  return skills
+  const normalizedSkills = skills
+    .flatMap((entry) => entry.split("\n"))
+    .map((line) => normalizeText(line))
+    .filter(Boolean);
+
+  const structuredBlocks = skills
     .map((entry) => {
       const lines = entry
         .split("\n")
@@ -91,10 +96,25 @@ function parseSkills(skills: string[] = []): ParsedSkillBlock[] {
       const [first, ...rest] = parsed;
       return {
         title: first.label,
-        details: [{ label: "Core", value: first.value }, ...rest],
+        details: [{ label: "", value: first.value }, ...rest],
       };
     })
     .filter((block): block is ParsedSkillBlock => Boolean(block));
+
+  if (structuredBlocks.length > 0) {
+    return structuredBlocks;
+  }
+
+  if (normalizedSkills.length === 0) {
+    return [];
+  }
+
+  return [
+    {
+      title: "Technical Skills",
+      details: [{ label: "", value: normalizedSkills.join(", ") }],
+    },
+  ];
 }
 
 export async function GET() {
@@ -327,7 +347,7 @@ export async function GET() {
   for (const block of skillBlocks) {
     drawParagraph(block.title.toUpperCase(), { bold: true, gapAfter: 0 });
     for (const detail of block.details) {
-      drawParagraph(`${detail.label}: ${detail.value}`, {
+      drawParagraph(detail.label ? `${detail.label}: ${detail.value}` : detail.value, {
         size: sizes.meta,
         color: "text",
         indent: 14,
