@@ -1,46 +1,13 @@
 import BlurFade from "@/components/magicui/blur-fade";
-import { getAuthorData } from "@/lib/data";
-import Link from "next/link";
+import { ContactForm } from "@/components/contact-form";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export const dynamic = "force-static";
 export const revalidate = 604800; // 1 week
 
-export default async function ContactPage() {
-  const author = await getAuthorData();
-
-  if (!author) return null;
-
-  const contactItems = [
-    { label: "Name", value: author.name ?? "" },
-    { label: "Location", value: author.location ?? "" },
-    {
-      label: "Email",
-      value: author.social?.email ?? "",
-      href: author.social?.email ? `mailto:${author.social.email}` : "",
-    },
-    {
-      label: "GitHub",
-      value: author.social?.github ?? "",
-      href: author.social?.github ?? "",
-    },
-    {
-      label: "LinkedIn",
-      value: author.social?.linkedin ?? "",
-      href: author.social?.linkedin ?? "",
-    },
-    {
-      label: "Twitter",
-      value: author.social?.twitter ?? "",
-      href: author.social?.twitter ?? "",
-    },
-    {
-      label: "Instagram",
-      value: author.social?.instagram ?? "",
-      href: author.social?.instagram ?? "",
-    },
-  ].filter((item) => item.value);
+export default function ContactPage() {
+  const accessKey = process.env.WEB3FORMS_ACCESS_KEY ?? "";
 
   return (
     <main className="flex flex-col min-h-dvh space-y-10">
@@ -54,37 +21,14 @@ export default async function ContactPage() {
               Get in Touch
             </h1>
             <p className="mx-auto max-w-150 text-muted-foreground md:text-xl/relaxed">
-              All my contact details are listed below. Reach out through email
-              or social links.
+              Send a message and I will get back to you soon.
             </p>
           </div>
         </BlurFade>
 
-        <div className="mx-auto mt-10 w-full max-w-150 space-y-3">
-          {contactItems.map((item, id) => {
-            const isExternal = Boolean(item.href && /^https?:\/\//.test(item.href));
-
-            return (
-              <BlurFade key={item.label} delay={BLUR_FADE_DELAY * 2 + id * 0.05}>
-                <div className="rounded-xl border bg-card/40 p-4">
-                  <p className="text-sm text-muted-foreground">{item.label}</p>
-                  {item.href ? (
-                    <Link
-                      href={item.href}
-                      target={isExternal ? "_blank" : undefined}
-                      rel={isExternal ? "noopener noreferrer" : undefined}
-                      className="break-all text-base text-blue-500 hover:underline"
-                    >
-                      {item.value}
-                    </Link>
-                  ) : (
-                    <p className="break-all text-base">{item.value}</p>
-                  )}
-                </div>
-              </BlurFade>
-            );
-          })}
-        </div>
+        <BlurFade delay={BLUR_FADE_DELAY * 2}>
+          <ContactForm accessKey={accessKey} />
+        </BlurFade>
       </section>
     </main>
   );

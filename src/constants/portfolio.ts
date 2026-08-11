@@ -124,7 +124,7 @@ export const AUTHOR: Author = {
     "Responsive Design",
     "SEO",
     "Performance Optimization",
-  
+
     "Node.js",
     "Express.js",
     "NestJS",
@@ -164,16 +164,14 @@ export const AUTHOR: Author = {
     "GitHub",
     "Docker",
     "GitHub Actions",
-    "CI/CD",
-    "Vercel",
+    "CI/CD(GitHub Actions)",
     "Deployment",
 
-    "Debugging"
   ],
   social: {
     github: "https://github.com/MOTAHAR124",
     email: "mdmotahar822@gmail.com",
-    linkedin :"https://www.linkedin.com/in/md-motahar",
+    linkedin: "https://www.linkedin.com/in/md-motahar",
     instagram: "https://www.instagram.com/syedmotahar/",
   },
 };
@@ -275,7 +273,7 @@ export const PROJECTS: Project[] = [
         ],
       },
     ],
-    technologies: ["Nest.js", "Responsive", "Tailwind CSS","TypeScript", "Node.js", "Gemini API", "Nest Auth", "LangChain"],
+    technologies: ["Nest.js", "Responsive", "Tailwind CSS", "TypeScript", "Node.js", "Gemini API", "Nest Auth", "LangChain"],
     image: {
       asset: {
         url: "/projects/project-1.webp",
@@ -400,7 +398,7 @@ export const PROJECTS: Project[] = [
         ],
       },
     ],
-    technologies: ["Next js", "Tailwind CSS", "Responsive", "Google Auth","JWT Auth", "Gemini API", "Nest Js", "MongoDB", "Qdrant", "TypeScript"],
+    technologies: ["Next js", "Tailwind CSS", "Responsive", "Google Auth", "JWT Auth", "Gemini API", "Nest Js", "MongoDB", "Qdrant", "TypeScript"],
     image: {
       asset: {
         url: "/projects/project-3.webp",
@@ -479,7 +477,7 @@ export const PROJECTS: Project[] = [
         ],
       },
     ],
-    technologies: ["Next js", "Tailwind CSS", "GSAP","LENIS", "Locomotive Scroll", "Framer Motion",],
+    technologies: ["Next js", "Tailwind CSS", "GSAP", "LENIS", "Locomotive Scroll", "Framer Motion",],
     image: {
       asset: {
         url: "/projects/project-4.webp",

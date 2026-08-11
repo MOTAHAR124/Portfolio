@@ -6,8 +6,8 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { useTheme } from "@/components/theme-provider";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
-import { useTheme } from "next-themes";
 import { useSyncExternalStore } from "react";
 
 export function ModeToggle() {

@@ -3,7 +3,7 @@
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import React, { PropsWithChildren, useRef } from "react";
+import React, { PropsWithChildren, useRef, useSyncExternalStore } from "react";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
@@ -14,6 +14,14 @@ export interface DockProps extends VariantProps<typeof dockVariants> {
 
 const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
+
+const subscribeToHydration = (callback: () => void) => {
+  const frame = window.requestAnimationFrame(callback);
+  return () => window.cancelAnimationFrame(frame);
+};
+
+const getMountedSnapshot = () => true;
+const getServerSnapshot = () => false;
 
 const dockVariants = cva(
   "mx-auto w-max h-full p-2 flex items-end rounded-full border"
@@ -72,7 +80,7 @@ export interface DockIconProps {
 }
 
 const DockIcon = ({
-  size,
+  size = 40,
   magnification = DEFAULT_MAGNIFICATION,
   distance = DEFAULT_DISTANCE,
   mousex,
@@ -81,6 +89,11 @@ const DockIcon = ({
   ...props
 }: DockIconProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const isMounted = useSyncExternalStore(
+    subscribeToHydration,
+    getMountedSnapshot,
+    getServerSnapshot
+  );
 
   const distanceCalc = useTransform(mousex, (val: number) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
@@ -102,7 +115,7 @@ const DockIcon = ({
   return (
     <motion.div
       ref={ref}
-      style={{ width }}
+      style={{ width: isMounted ? width : size }}
       className={cn(
         "flex aspect-square cursor-pointer items-center justify-center rounded-full",
         className
