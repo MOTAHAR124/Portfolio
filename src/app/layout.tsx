@@ -20,6 +20,9 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
       title: "Portfolio",
       description: "Personal portfolio website",
+      verification: {
+        google: "googlec5332e5d345a03fa.html",
+      },
     };
   }
 
@@ -67,7 +70,7 @@ export async function generateMetadata(): Promise<Metadata> {
       images: author.avatar?.asset?.url ? [author.avatar.asset.url] : [],
     },
     verification: {
-      google: "",
+      google: "googlec5332e5d345a03fa.html",
       yandex: "",
     },
   };
