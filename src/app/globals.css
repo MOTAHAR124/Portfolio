@@ -1,6 +1,43 @@
 @config "../../tailwind.config.cjs";
 @import "tailwindcss";
 
+/* ─── Theme Wave Reveal Transition ──────────────────────────────────── */
+
+/*
+ * The View Transitions API creates two pseudo-elements:
+ *   ::view-transition-old(root) — a frozen screenshot of the OLD state
+ *   ::view-transition-new(root) — a live snapshot of the NEW state
+ *
+ * We disable the default cross-fade and instead animate the new snapshot
+ * with an expanding circle clip-path driven from JS.
+ */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  /* Disable the browser's default fade */
+  animation: none;
+  /* Both layers stack on top of each other */
+  mix-blend-mode: normal;
+}
+
+/* Keep the old view visible underneath while the new one reveals over it */
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* Respect the user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+    clip-path: none !important;
+  }
+}
+
 @layer base {
   :root {
     --background: 36 20% 97%;

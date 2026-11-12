@@ -11,7 +11,7 @@ import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useSyncExternalStore } from "react";
 
 export function ModeToggle() {
-  const { resolvedTheme, setTheme } = useTheme();
+  const { resolvedTheme, setThemeWithTransition } = useTheme();
   const mounted = useSyncExternalStore(
     () => () => {},
     () => true,
@@ -30,7 +30,9 @@ export function ModeToggle() {
           size="icon"
           className="px-2 cursor-pointer"
           aria-label={currentModeLabel}
-          onClick={() => setTheme(isDarkMode ? "light" : "dark")}
+          onClick={() =>
+            setThemeWithTransition(isDarkMode ? "light" : "dark")
+          }
         >
           <SunIcon className="h-[1.2rem] w-[1.2rem] text-neutral-800 dark:hidden dark:text-neutral-200" />
           <MoonIcon className="hidden h-[1.2rem] w-[1.2rem] text-neutral-800 dark:block dark:text-neutral-200" />
