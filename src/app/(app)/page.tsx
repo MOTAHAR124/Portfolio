@@ -131,18 +131,36 @@ export default async function Page() {
         </div>
       </section> */}
       <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
+        <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
+            <h2 className="text-xl font-bold tracking-tight">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1.5">
-            {author.skills?.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill} className="px-3 py-1 text-sm">
-                  {skill}
-                </Badge>
-              </BlurFade>
-            ))}
+          <div className="flex flex-col gap-2.5">
+            {author.skills?.map((skill, id) => {
+              const colonIdx = skill.indexOf(":");
+              const label = colonIdx !== -1 ? skill.slice(0, colonIdx).trim() : "";
+              const value = colonIdx !== -1 ? skill.slice(colonIdx + 1).trim() : skill;
+
+              return (
+                <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
+                  <div className="group relative overflow-hidden rounded-xl border border-border/60 bg-primary px-4 py-3 transition-all duration-300 hover:bg-primary/90 hover:shadow-sm">
+                    {/* subtle left accent bar */}
+                    <div className="absolute left-0 top-0 h-full w-[3px] rounded-l-xl bg-gradient-to-b from-primary-foreground/40 via-primary-foreground/20 to-transparent" />
+                    <div className="flex flex-wrap items-baseline gap-x-2">
+                      {label && (
+                        <span className="shrink-0 text-[13px] font-semibold tracking-wide text-primary-foreground">
+                          {label}
+                          <span className="text-primary-foreground/60">:</span>
+                        </span>
+                      )}
+                      <span className="text-[12.5px] leading-relaxed text-primary-foreground/75">
+                        {value}
+                      </span>
+                    </div>
+                  </div>
+                </BlurFade>
+              );
+            })}
           </div>
         </div>
       </section>
